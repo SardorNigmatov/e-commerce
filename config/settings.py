@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
-from dotenv import dotenv_values
-config = dotenv_values(".env")
+# from dotenv import dotenv_values
+# config = dotenv_values(".env")
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -88,23 +88,23 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config.get("NAME"),
-        'USER': config.get("USER"),
-        'PASSWORD': config.get("PASSWORD"),
-        'HOST':config.get("HOST"),
-        'PORT':config.get("PORT"),
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': config.get("NAME"),
+#         'USER': config.get("USER"),
+#         'PASSWORD': config.get("PASSWORD"),
+#         'HOST':config.get("HOST"),
+#         'PORT':config.get("PORT"),
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 
